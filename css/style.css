@@ -1,0 +1,389 @@
+@font-face {
+  font-family: BadScript-Regular;
+  src: url("../static/font/BadScript-Regular.ttf");
+}
+
+@font-face {
+  font-family: OpenSans-Regular;
+  src: url("../static/font/OpenSans-Regular.ttf");
+}
+
+@font-face {
+  font-family: OpenSans-Bold;
+  src: url("../static/font/OpenSans-Bold.ttf");
+}
+
+@font-face {
+  font-family: Oswald-Bold;
+  src: url("../static/font/Oswald-VariableFont_wght.ttf");
+}
+
+/* Global Config */
+
+:root {
+  --flax: #f2efde;
+  --olivine: #cbd3a7;
+  --russian-green: #82b583;
+  --russian-green-2: rgba(160, 223, 161, 0.75);
+  --russian-green-trans: rgba(130, 181, 131, 0.2);
+  --russian-green-trans-2: rgba(130, 181, 131, 0.5);
+  --russian-green-trans-3: rgba(130, 181, 131, 0.8);
+  --old-lavender: #765d98;
+  --english-violet: #704a82;
+  --main-pink: #ee7674;
+
+  font-size: calc(0.6em + 1vw);
+  box-sizing: border-box;
+}
+
+*,
+::before,
+::after {
+  box-sizing: inherit;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+p,
+a {
+  margin-bottom: 0;
+}
+
+.text-green {
+  color: var(--russian-green);
+}
+
+.text-violet {
+  color: var(--english-violet);
+}
+
+.bg-green {
+  background-color: var(--russian-green);
+}
+
+.bg-violet {
+  background-color: var(--english-violet);
+}
+
+.button-green {
+  font-family: "Oswald-Bold";
+  color: var(--russian-green);
+  border: 1px solid var(--russian-green);
+  transition: all 0.3s linear;
+}
+
+.button-green:hover {
+  background-color: var(--russian-green);
+  color: white;
+}
+
+.button-violet {
+  font-family: "Oswald-Bold";
+  color: var(--english-violet);
+  border: 1px solid var(--english-violet);
+  transition: all 0.3s linear;
+}
+
+.button-violet:hover {
+  background-color: var(--english-violet);
+  color: white;
+}
+
+/* Change the default form-control behaviour */
+.form-control:focus {
+  border-color: var(--english-violet) !important;
+  box-shadow: 0 0 0.2em var(--old-lavender) !important;
+}
+
+body {
+  font-family: "BadScript-Regular", cursive;
+  /* background: var(--old-lavender); */
+  /* color: white; */
+}
+
+/* End of Global Config */
+
+/* Header */
+
+.navbar {
+  min-height: 13vh;
+}
+
+#header .navbar-brand img {
+  width: 1.8em;
+  height: 1.8em;
+}
+
+#header .navbar-brand {
+  /* font-family: "Oswald-Bold"; */
+  color: var(--main-pink);
+  font-weight: bold;
+}
+
+#header .navbar-items > span {
+  font-family: "OpenSans-Bold";
+  font-style: italic;
+}
+
+#header .navbar-toggler {
+  outline: none !important;
+}
+
+#header .navbar-toggler .toggler-icon {
+  font-size: 2rem;
+  color: var(--russian-green);
+}
+
+#header .nav-item > .nav-link {
+  outline: none;
+  color: var(--russian-green);
+  transition: all 0.4s ease-out;
+}
+
+#header .nav-item > .nav-link:hover {
+  outline: none;
+  color: var(--old-lavender);
+  font-weight: bold;
+}
+
+#header .navbar-items {
+  font-size: 0.8rem;
+  min-width: 50%;
+}
+
+#header .navbar-items button {
+  padding: 0;
+  font-size: 0.75rem;
+}
+
+#header .navbar-items button a > * {
+  color: var(--russian-green);
+  font-weight: bold;
+}
+
+#header .navbar-items button:hover a > * {
+  color: white;
+}
+
+/* End of Header */
+
+/* Banner */
+
+#banner {
+  position: relative;
+}
+
+.banner-height {
+  min-height: 87vh;
+  background: linear-gradient(
+      90deg,
+      var(--russian-green-trans),
+      var(--russian-green-trans-2)
+    ),
+    url(../static/image/banner-bg.jpg);
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
+
+.banner-title {
+  font-size: 2.5rem;
+}
+
+.banner-title-strong {
+  font-size: 3.5rem;
+  color: var(--english-violet);
+}
+
+.banner-link {
+  font-size: 1.5rem;
+  font-style: italic;
+}
+
+/* End of Banner */
+
+/* Cart */
+#cart {
+  position: absolute;
+  min-height: 22em;
+  /* width: 0; */
+  overflow: hidden;
+  min-width: 18em;
+  background-color: var(--russian-green-2);
+  top: 0;
+  right: 0;
+  font-family: Oswald-Bold;
+  opacity: 0;
+  pointer-events: none;
+  /* transform: scale(0); */
+  transition: all 0.5s linear;
+}
+
+#cart.show-cart {
+  opacity: 1;
+  pointer-events: all;
+  /* transform: scale(1); */
+  /* width: 18em; */
+}
+
+.cart-item-pic {
+  width: 4em;
+  height: 4em;
+  padding: 0.4em;
+  border: 0.1em solid var(--english-violet);
+  background-color: var(--old-lavender);
+}
+
+.cart-item-remove > a {
+  color: var(--old-lavender);
+}
+
+.cart-item-remove:hover > a {
+  color: var(--english-violet);
+}
+/* End of Cart */
+
+/* About Section */
+
+.about-title {
+  font-size: 2.5rem;
+}
+
+.about-title-strong {
+  font-size: 3.5rem;
+  color: var(--english-violet);
+}
+
+.about-link {
+  font-size: 1rem;
+  font-style: italic;
+}
+
+.about-image-container {
+  position: relative;
+}
+
+.about-image-container::before {
+  position: absolute;
+  content: "";
+  height: 100%;
+  width: 100%;
+  top: -1.5em;
+  left: -1.5em;
+  border: 0.3em solid var(--english-violet);
+  z-index: -1;
+  transition: all 0.6s linear;
+}
+
+.about-image-container:hover::before {
+  top: 0;
+  left: 0;
+}
+
+/* End of About Section */
+
+/* Store Section */
+
+.store-title {
+  font-size: 2.5rem;
+}
+
+.store-title-strong {
+  font-size: 3.5rem;
+  color: var(--english-violet);
+}
+
+.store-input-icon {
+  background-color: var(--russian-green);
+  /* border: none; */
+  color: black;
+}
+
+.store_fruit {
+  background-color: var(--flax);
+  border: 1px solid var(--english-violet);
+  box-shadow: 0.1em 0.1em 0.1em var(--english-violet);
+  transition: all 0.3s linear;
+}
+
+.store_fruit__picture_wrapper {
+  overflow: hidden;
+}
+
+.store_fruit__picture_wrapper > img {
+  transition: all 0.3s linear;
+}
+
+.store_fruit:hover {
+  box-shadow: 0.3em 0.3em 0.3em var(--english-violet);
+}
+
+.store_fruit:hover .store_fruit__picture_wrapper > img {
+  transform: scale(1.2);
+}
+
+.store_fruit__desc {
+  font-family: Oswald-Bold;
+  color: var(--old-lavender);
+  font-weight: bold;
+}
+
+/* End of Store Section */
+
+/* Service Section */
+
+#service {
+  background-image: linear-gradient(
+      180deg,
+      var(--russian-green-trans-2),
+      var(--russian-green-trans-3)
+    ),
+    url(../static/image/service-bg.jpg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+}
+
+#service .service-item {
+  font-family: Oswald-Bold;
+}
+
+/* End of Service Section */
+
+/* Order Section */
+
+.order-title {
+  font-size: 2.5rem;
+}
+
+.order-title-strong {
+  font-size: 3.5rem;
+  color: var(--english-violet);
+}
+
+/* End of Order Section */
+
+/* footer */
+.footer-title {
+  font-size: 3em;
+  color: var(--main-pink);
+}
+
+.media-follow {
+  color: var(--flax);
+}
+
+.media-follow:hover {
+  color: var(--main-pink);
+}
+
+.footer-right {
+  background-color: var(--flax);
+  font-family: Oswald-Bold;
+}
+/* footer */
